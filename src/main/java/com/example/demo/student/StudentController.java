@@ -3,9 +3,7 @@ package com.example.demo.student;
 //This Class will have all of the ressources for the API
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -25,6 +23,14 @@ public class StudentController {
     @GetMapping
     public List<Student> getStudents(){
         return studentService.getStudents();
+    }
+
+    //POST used when you want to add new ressources to your system, in here when add new student
+    @PostMapping
+    public void registerNewStudent(@RequestBody Student student){
+        //Take RequestBody and map it to student up there
+
+        studentService.addNewStudent(student);
     }
 
 }
