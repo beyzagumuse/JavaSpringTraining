@@ -1,8 +1,29 @@
 package com.example.demo.student;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+//use spring.data.jpa to create table inside our db, and perform add delete etc. operations.
+// with spring-boot-starter-data-jpa dependency we can make it happen
+
+//map this student to our db with @entity for hibernate and @table for table in db
+@Entity
+@Table
 public class Student {
+
+    @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
+    //just mapped student class to db
+
     private Long id;
     private String name;
     private String email;
