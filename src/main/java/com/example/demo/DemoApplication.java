@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @SpringBootApplication
 @RestController
 public class DemoApplication {
@@ -16,8 +18,8 @@ public class DemoApplication {
 	@GetMapping
 	//This makes this class serve a rest endpoint
 	// Only rest endpoint is this one
-	public String hello(){
-		return "Hello World";
+	public List<String> hello(){
+		return List.of("Hello", "World");
 	}
 
 }
