@@ -1,9 +1,13 @@
 package com.example.demo.student;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
+@Service // to use this class with @Autowired I have to add @Component or more specific @Service so this can be found
 public class StudentService {
 
     //Business Layer -> API Layer should talk to Service Layer to get some data
