@@ -4,10 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
-//use spring.data.jpa to create table inside our db, and perform add delete etc. operations.
-// with spring-boot-starter-data-jpa dependency we can make it happen
-
-//map this student to our db with @entity for hibernate and @table for table in db
 @Entity
 @Table
 public class Student {
