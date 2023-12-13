@@ -25,12 +25,16 @@ public class StudentController {
         return studentService.getStudents();
     }
 
-    //POST used when you want to add new ressources to your system, in here when add new student
+    //POST add student
     @PostMapping
     public void registerNewStudent(@RequestBody Student student){
-        //Take RequestBody and map it to student up there
-
         studentService.addNewStudent(student);
+    }
+
+    //delete student by ID from DB
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
     }
 
 }
